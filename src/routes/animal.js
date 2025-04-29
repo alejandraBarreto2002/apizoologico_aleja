@@ -50,9 +50,9 @@ router.delete("/animals/:id", (req, res) => {
         });
 });
 //consultar todos los animales
-router.get("/animals", verifyToken, (req, res) => {
+router.get("/animals", (req, res) => {
     animalSchema.find()
-        .then((data) => res.jason(data))
-        .catch((error) => res.jason({ message: error }));
+        .then((data) => res.json(data))
+        .catch((error) => res.json({ message: error }));
 });
 module.exports = router;
